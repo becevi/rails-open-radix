@@ -8,3 +8,9 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+.heading-font {
+  font-family: $headers-font;
+  font-weight: lighter;
+  color: white;
+}

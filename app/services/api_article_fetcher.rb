@@ -32,7 +32,7 @@ class ApiArticleFetcher
     total_count = data["totalCount"]
     #! The totalCount is not for the news in DB is for the related articles
     #! 100 seems to work with most searches, play with it.
-    @page_number = 100
+    @page_number = 1
   end
 
   private
@@ -67,7 +67,7 @@ class ApiArticleFetcher
 
   def fetch_articles
     update_page_number(JSON.parse(connect_to_api.read_body))
-
-    JSON.parse(connect_to_api.read_body)
+    @page_number -= 2 while JSON.parse(connect_to_api.read_body)['value'].empty?
+    JSON.parse(connect_to_api.read_body)['value']
   end
 end

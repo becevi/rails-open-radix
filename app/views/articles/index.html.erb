@@ -1,7 +1,11 @@
 <h2>This page is for displaying search results</h2>
 <h4>We need a timeline for the results from the API</h4>
-<h3>
-Test article title: <%= @all_articles[0].title %>
-</h3>
+
+<% @all_articles.each do |article| %>
+
+  <p><%= article.title %></p>
+  <p><%= article.publishedAt %></p>
+
+<% end %>
 
 Test article content: <%= @all_articles[0].content %>

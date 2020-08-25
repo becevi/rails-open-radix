@@ -1,9 +1,10 @@
 <div class="heading-container">
   <h1>open_radix</h1>
-  <%= form_tag class: "form-inline", method: :get do %>
+  <%= form_tag articles_path, class: "form-inline", method: :get do %>
       <%= text_field_tag :query,
       params[:query],
-      class: "form-control search-input mr-1 radius-1px"
+      class: "form-control search-input mr-1 radius-1px",
+      placeholder: "Search for articles"
     %>
     <%= submit_tag "Find Source", class: "btn btn-success"  %>
     <% end %>

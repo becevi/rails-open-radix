@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   def index
+
     @search_articles = ApiArticleFetcher.execute(params[:query].split(','))
       @all_articles = []
       # create article objects and saved them to DB and displayed in the index

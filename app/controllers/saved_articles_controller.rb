@@ -8,5 +8,4 @@ class SavedArticlesController < ApplicationController
     else
      #maybe an error message
   end
-
 end

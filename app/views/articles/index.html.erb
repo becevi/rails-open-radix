@@ -2,14 +2,16 @@
 <h4>We need a timeline for the results from the API</h4>
 
 <ul>
-  <% @all_articles["response"]["results"].first(5).each do |article| %>
+  <% @all_articles.last(5).each do |article| %>
   <li>
 
-      <h4><%=  article["webTitle"] %> </h4>
-      <h5><%= article["webPublicationDate"] %> </h5>
-      <p><%= article["webUrl"] %></p>
-
-
+      <h4><%=  article.title %> </h4>
+      <p><%= article.name %></p>
+      <p><%= article.description %></p>
+      <p><%= article.publishedAt %></p>
+      
+      <%= link_to "Save article to timeline" %>    
+    
   </li>
 
   <button>Save to existing timeline</button>

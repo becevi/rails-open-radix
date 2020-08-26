@@ -1,11 +1,16 @@
 <div class="heading-container">
-  <h1>open_radix</h1>
+  <h1 id="typed"></h1>
   <%= form_tag articles_path, class: "form-inline", method: :get do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control search-input mr-1 radius-1px",
-      placeholder: "Search for articles"
-    %>
+      <div class="cursorbox">
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search-input mr-1 radius-1px",
+        autocomplete: "off",
+        placeholder: "Search for articles"
+        %>
+        <span id="cursor">|</span>
+      </div>
+      
     <%= submit_tag "Find Source", class: "btn btn-ireland"  %>
     <% end %>
 </div>

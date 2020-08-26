@@ -16,14 +16,9 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <%= render 'shared/footer' %>
     <div class="container">
     <%= yield %>
-    </div>
-    <div class="footer mt-5 d-flex justify-content-between fixed-bottom">
-      <p class="footer-text">Copyright © 2020 Open Radix. All rights reserved</p>
-      <span><a href="#"><i class="fab fa-instagram"></i></a>
-       <a href="#"><i class="fab fa-github"></i></a>
-       <a href="#"><i class="fab fa-twitter"></i></a></span>
     </div>
   </body>
 </html>

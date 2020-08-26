@@ -15,10 +15,10 @@
         <li class="nav-item">
           <%= link_to "about", about_path, class: current_class?(about_path) %>
         </li>
-        <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="search articles" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">find source</button>
-    </form>
+        <form class="form-inline my-2 my-lg-0" style=<% is_home?(root_path) %>>
+          <input class="form-control mr-sm-2" type="search" placeholder="search articles" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">find source</button>
+        </form>
         <li class="nav-item dropdown mt-2 ml-3">
           <i id="navbarDropdown" data-toggle="dropdown" aria-haspopup='true' aria-expanded='false' style="color: #1EDD88; cursor: pointer"><%= current_user.name %></i>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

@@ -4,7 +4,7 @@
 <ul>
   <% @all_articles.last(5).each do |article| %>
   <li>
-    
+
       <h4><%=  article.title %> </h4>
       <p><%= article.name %></p>
       <p><%= article.description %></p>
@@ -13,7 +13,12 @@
       <%= link_to "Save article to timeline" %>    
     
   </li>
-   
+
+  <button>Save to existing timeline</button>
+  // scroll down with existing timelines
+
+
+
 <% end %>
 </ul>
 

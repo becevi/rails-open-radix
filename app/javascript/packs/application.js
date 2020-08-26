@@ -24,20 +24,17 @@ require("channels")
 
 // External imports
 import "bootstrap";
-
-const typedHeading = document.getElementById('typed');
-
-var i = 0;
-var txt = 'open_radix'; /* The text */
-var speed = 200; /* The speed/duration of the effect in milliseconds */
-
-function typeWriter() {
-  if (i < txt.length) {
-    typedHeading.innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
+import Typed from "typed.js";
+const options = {
+  strings: ['open_radix'],
+  typeSpeed: 100,
+  showCursor: false,
+  smartBackspace: true
 }
+
+var typed = new Typed(document.getElementById('typed'), options)
+
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -46,5 +43,5 @@ function typeWriter() {
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  typeWriter()
+  typed
 });

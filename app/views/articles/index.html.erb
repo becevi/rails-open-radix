@@ -4,14 +4,19 @@
 <ul>
   <% @all_articles["response"]["results"].first(5).each do |article| %>
   <li>
-    
+
       <h4><%=  article["webTitle"] %> </h4>
       <h5><%= article["webPublicationDate"] %> </h5>
       <p><%= article["webUrl"] %></p>
-    
-    
+
+
   </li>
-   
+
+  <button>Save to existing timeline</button>
+  // scroll down with existing timelines
+
+
+
 <% end %>
 </ul>
 

@@ -1,17 +1,21 @@
-<div class="heading-container">
-  <h1 id="typed"></h1>
-  <%= form_tag articles_path, class: "form-inline", method: :get do %>
-      <div class="cursorbox">
-        <%= text_field_tag :query,
-        params[:query],
-        class: "form-control search-input mr-1 radius-1px",
-        autocomplete: "off",
-        placeholder: "Search"
-        %>
-      </div>
 
-    <%= submit_tag "Find Source", class: "btn btn-ireland"  %>
-    <% end %>
-</div>
+  <div class="heading-container">
+    
+    <h1 id="typed"></h1>
+    <%= form_tag articles_path, class: "form-inline", method: :get do %>
+        
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control search-input mr-1 radius-1px",
+          autocomplete: "off",
+          placeholder: "Search"
+          %>
+        
+
+      <%= submit_tag "Find Source", class: "btn btn-ireland"  %>
+      <% end %>
+  </div>
+
+
 
 

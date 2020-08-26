@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+.section-home {
+  position: relative;
+  height: 75vh;
+}
 
 .heading-container {
   display: flex;
@@ -16,9 +20,3 @@
   color: white;
 }
 
-body {
-  background-image: url('green-brain.png');
-  opacity: 1;
-  background-size: 600px 500px;
-  background-repeat: no-repeat;
-}

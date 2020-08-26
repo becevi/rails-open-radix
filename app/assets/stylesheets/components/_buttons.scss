@@ -2,3 +2,17 @@
   background-color: $ireland;
   color: white;
 }
+
+.devise-btn {
+  background-color: $ireland;
+  color: white;
+  border-color: $radix-black;
+}
+
+.devise-btn:hover {
+ background-color: $ireland;
+ filter: grayscale(0.3);
+ border-color: $radix-black;
+ color: $radix-black;
+}
+

@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'json'
+require 'news-api'
 
 
 require 'date'
@@ -23,21 +24,10 @@ class ApiArticleFetcher
   end
 
   def fetch_articles
-   url= "https://content.guardianapis.com/search?order-by=oldest&page-Size=10&q=#{URI.encode(q)}&api-key=a56dd13e-d0f2-40f4-992d-8cad04244c0d"
-   puts url
-   articles_serialized = open(url).read
-   @articles = JSON.parse(articles_serialized)
+    @newsapi = News.new("0d80da2ec0f6419cba14320e47c559cb") 
+    @newsapi.get_everything(q: @query,
+      language: 'en',
+      sortBy: 'publishedAt',
+      pageSize: 100)
   end
-
-  def q
-    query_arr = @query.map do |query|
-      "\"#{query}\""
-    end
-
-    query_arr.join(" AND ")
-
-
-  end
-
-
 end

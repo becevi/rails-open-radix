@@ -13,6 +13,7 @@
 @import "pages/index";
 @import "components/footer";
 @import "components/forms";
+@import "components/icons";
 
 body {
   margin: 0;
@@ -20,7 +21,7 @@ body {
   background-color: #181818;
   color: white;
   background-image: url("opaque-brain.png");
-  background-position: center;
-  background-size: initial;
+  background-position: -40% 15%;
+  background-size: 1050px 1100px;
   background-repeat: no-repeat;
 }

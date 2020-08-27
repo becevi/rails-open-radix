@@ -1,10 +1,14 @@
 <div class="topic-timeline">
+<% if @timeline %>
 <h1><%= @timeline.topic  %></h1>
 <h2><%= @timeline.description %></h2>
+<% end %>
 </div>
 
+<% if @timeline %>
 <%  @timeline.articles.each do |article| %>
   <%= article.title %>
+<% end %>
 <% end %>
 
 

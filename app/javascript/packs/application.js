@@ -24,16 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import Typed from "typed.js";
-const options = {
-  strings: ['open_radix'],
-  typeSpeed: 100,
-  showCursor: false,
-  smartBackspace: true
-}
-
-var typed = new Typed(document.getElementById('typed'), options)
-
+import { loadDynamicBannerText } from './typed.js';
 
 
 // Internal imports, e.g:
@@ -43,5 +34,5 @@ var typed = new Typed(document.getElementById('typed'), options)
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  typed
+  loadDynamicBannerText()
 });

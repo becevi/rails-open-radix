@@ -4,7 +4,10 @@ class TimelinesController < ApplicationController
     @timelines = Timeline.all
   end
   def show
-    @timeline = Timeline.find(params[:id])
+    @timelines = Timeline.all
+    if @timelines.length > 0
+      @timeline = Timeline.find(params[:id])
+    end
   end
 
   def new

@@ -41,7 +41,7 @@ end
   private
 
   def timeline_params
-    params.require(:timeline).permit(:title, :description)
+    params.require(:timeline).permit(:topic, :description)
   end
 
 end

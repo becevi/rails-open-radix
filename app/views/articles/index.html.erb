@@ -1,26 +1,20 @@
 <h2>This page is for displaying search results</h2>
 <h4>We need a timeline for the results from the API</h4>
 
-<ul>
-  <% @all_articles.last(5).each do |article| %>
-  <li>
 
-      <h4><%=  article.title %> </h4>
-      <p><%= article.name %></p>
+  <% @index_timeline.each do |article| %>
+    <div class="card">
+      <h5><%=  article.title %> </h5>
+      <p><%= article.source %></p>
       <p><%= article.description %></p>
-      <p><%= article.publishedAt %></p>
-      
-      <%= link_to "Save article to timeline" %>    
-    
-  </li>
-
-  <button>Save to existing timeline</button>
-  // scroll down with existing timelines
-
-
-
+      <p><%= article.published_at %></p>
+      <%= link_to "Save article to new timeline" %>  
+      <%= link_to "Save article to existing timeline" %>
+    </div>
+          
+  
 <% end %>
-</ul>
+
 
 
 

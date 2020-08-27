@@ -8,6 +8,7 @@
  <%  @timelines.each do |timeline| %>
   <div class="timeline-card">
     <h3> <%= timeline.topic %> </h3>
+    <%= link_to "View this timeline", timeline_path(timeline), class: "btn btn-ireland" %>
   </div>
   <% end %>
 

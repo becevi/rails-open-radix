@@ -3,4 +3,9 @@
 <h2><%= @timeline.description %></h2>
 </div>
 
-<h3>INSERT USERS TIMELINE CHARTS</h3>
+<%  @timeline.articles.each do |article| %>
+  <%= article.title %>
+<% end %>
+
+
+

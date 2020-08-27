@@ -1,16 +1,18 @@
 class ArticlesController < ApplicationController
   def index
-
-    @search_articles = ApiArticleFetcher.execute(params[:query].split(','))
-      @all_articles = []
-      # create article objects and saved them to DB and displayed in the index
-    @search_articles.each do |article|
-      @all_articles << Article.create(params:[]) # add params from newsapi
+    @index_timeline = []
+    @all_articles = ApiArticleFetcher.execute(params[:query]).last(5).each do |article|
+      new_article = Article.create(
+        title: article.title,
+        author: article.author,
+        source: article.name,
+        description: article.description,
+        content: article.content,
+        published_at: article.publishedAt,
+        img_url: article.urlToImage
+      )
+      @index_timeline << new_article
     end
-
+    return @index_timeline
   end
-
-
-
-  # Add a button to saved_articles controller
 end

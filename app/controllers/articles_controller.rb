@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
   def index
+    @user = current_user
+    @saved_article = SavedArticle.new
+    @timelines = Timeline.all
     @index_timeline = []
     @all_articles = ApiArticleFetcher.execute(params[:query]).last(5).each do |article|
       new_article = Article.create(

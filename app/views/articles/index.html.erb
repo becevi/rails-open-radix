@@ -9,7 +9,45 @@
       <p><%= article.description.truncate(100) %></p>
       <div class="index-card-links">
       <%= link_to "See full article", article.article_url, target: :_blank, class: "btn btn-ireland" %>
-      <%= link_to "Save article to timeline", article.article_url, target: :_blank, class: "btn btn-ireland-outline" %>  
+      <button type="button" class="btn btn-ireland-outline" data-toggle="modal" data-target="#exampleModal">
+        Save Article
+      </button> 
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color: black;" id="exampleModalLabel">Save Article to Timeline</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6 style="color:black;">Add to a new timeline</h6>
+        <h6 style="color:black;">Add to an existing timeline</h6>
+        <%= simple_form_for @saved_article do |f| %>
+            <%= f.input :timeline, collection: @timelines.pluck(:topic) %>
+            <%= f.hidden_field :article_id, value: article.id %>
+            <%= f.button :submit %>
+            <% end %>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Your Timelines
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <%  @timelines.each do |timeline| %>
+            
+            <%= link_to timeline.topic, saved_articles_path(timeline, article), method: :post, class: "dropdown-item" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ireland" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-ireland-outline">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> 
       </div>
       
     </div>

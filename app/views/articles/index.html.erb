@@ -3,13 +3,15 @@
 
 
   <% @index_timeline.each do |article| %>
-    <div class="card">
+    <div class="index-card">
+      <p><%= article.published_at %> | <%= article.source %></p> 
       <h5><%=  article.title %> </h5>
-      <p><%= article.source %></p>
-      <p><%= article.description %></p>
-      <p><%= article.published_at %></p>
-      <%= link_to "Save article to new timeline" %>  
-      <%= link_to "Save article to existing timeline" %>
+      <p><%= article.description.truncate(100) %></p>
+      <div class="index-card-links">
+      <%= link_to "See full article", article.article_url, target: :_blank, class: "btn btn-ireland" %>
+      <%= link_to "Save article to timeline", article.article_url, target: :_blank, class: "btn btn-ireland-outline" %>  
+      </div>
+      
     </div>
           
   

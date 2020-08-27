@@ -3,6 +3,16 @@
   color: white;
 }
 
+.btn-ireland-outline {
+  background-color: transparent;
+  color: $green;
+  border: 1px solid white;
+  &:hover {
+    color: white;
+    border: 1px solid $green;
+  }
+}
+
 .devise-btn {
   background-color: $green;
   color: white;

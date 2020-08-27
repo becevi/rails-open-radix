@@ -1,11 +1,9 @@
 class SavedArticlesController < ApplicationController
 
   def create
-    raise
-    @timeline = Timeline.where(topic: params[:timeline])
-    @saved_article = SavedArticle.new(params[:article_id]) # creating a link between timeline  and article
+    @timeline = Timeline.find_by(topic: params[:saved_article][:timeline])
+    @saved_article = SavedArticle.new(article_id: params[:saved_article][:article_id]) # creating a link between timeline  and article
     @saved_article.timeline = @timeline
-    raise
      if @saved_article.save
       redirect_to timeline_path(@timeline)
     else

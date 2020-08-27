@@ -23,23 +23,19 @@
       </div>
       <div class="modal-body">
         <h6 style="color:black;">Add to a new timeline</h6>
+          <%= simple_form_for @timeline do |f| %>
+            <%= f.input :topic, placeholder: 'Enter topic name' %>
+            <%= f.simple_fields_for :saved_articles do |s| %>
+              <%= s.hidden_field :saved_article_id %>
+            <% end %>
+            <%= f.button :submit, class: "btn btn-ireland" %>
+          <% end %>
         <h6 style="color:black;">Add to an existing timeline</h6>
         <%= simple_form_for @saved_article do |f| %>
             <%= f.input :timeline, collection: @timelines.pluck(:topic) %>
             <%= f.hidden_field :article_id, value: article.id %>
-            <%= f.button :submit %>
+            <%= f.button :submit, "Add", class: "btn btn-ireland" %>
             <% end %>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Your Timelines
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <%  @timelines.each do |timeline| %>
-            
-            <%= link_to timeline.topic, saved_articles_path(timeline, article), method: :post, class: "dropdown-item" %>
-            <% end %>
-          </div>
-        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-ireland" data-dismiss="modal">Close</button>

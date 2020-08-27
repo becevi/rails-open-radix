@@ -1,15 +1,18 @@
 class TimelinesController < ApplicationController
 
   def index
-
     @timelines = Timeline.all
   end
   def show
-
+    @timelines = Timeline.all
+    if @timelines.length > 0
+      @timeline = Timeline.find(params[:id])
+    end
   end
 
   def new
     @timeline = Timeline.new
+    @timeline.saved_articles.build
   end
 
   def create

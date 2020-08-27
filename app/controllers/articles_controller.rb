@@ -9,7 +9,8 @@ class ArticlesController < ApplicationController
         description: article.description,
         content: article.content,
         published_at: article.publishedAt,
-        img_url: article.urlToImage
+        img_url: article.urlToImage,
+        article_url: article.url
       )
       @index_timeline << new_article
     end

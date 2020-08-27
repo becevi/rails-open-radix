@@ -19,10 +19,11 @@ class TimelinesController < ApplicationController
       redirect_to timelines_path(@timeline)
     else
       render :new
+    end
   end
 
   def edit
-end
+  end
 
 def update
   @timeline.update(timeline_params)

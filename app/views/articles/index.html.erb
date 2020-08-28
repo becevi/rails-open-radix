@@ -1,5 +1,90 @@
+
 <h2>Results....</h2>
 
+
+<section class="cd-horizontal-timeline">
+	<div class="timeline">
+		<div class="events-wrapper">
+			<div class="events">
+				<ol>
+        <!-- year-month-day -->
+        <!-- day/month/year -->
+        <% @index_timeline.each_with_index do |article, index| %>  
+          <%date = article.published_at%>
+          <% date_format = date.strftime('%d/%m/%Y')%> 
+					<li><a href="#0" data-date="<%=date_format%>" class="<%='selected' if index == 0%>"><%=date_format%></a></li>
+        <% end %>
+				</ol>
+
+
+				<span class="filling-line" aria-hidden="true"></span>
+			</div> <!-- .events --> 
+		</div> <!-- .events-wrapper -->
+			
+		<ul class="cd-timeline-navigation">
+			<li><a href="#0" class="prev inactive">Prev</a></li><!-- here -->
+			<li><a href="#0" class="next">Next</a></li><!-- here -->
+		</ul> <!-- .cd-timeline-navigation -->
+	</div> <!-- .timeline -->
+
+	<div class="events-content">
+		<ol>
+    <% @index_timeline.each_with_index do |article, index| %>
+        <%date = article.published_at%>
+        <% date_format = date.strftime('%d/%m/%Y')%> 
+        <li class="<%='selected' if index == 0%>" data-date="<%=date_format%>"><!-- here -->
+          <div class="index-card">
+          <em><%= article.published_at %> | <%= article.source %></em><!-- here -->
+          <p><%= article.description.truncate(100) %></p><!-- here -->
+        <div class="index-card-links">
+        <%= link_to "See full article", article.article_url, target: :_blank, class: "btn btn-ireland" %>
+        <button type="button" class="btn btn-ireland-outline" data-toggle="modal" data-target="#exampleModal">
+          Save Article
+        </button> 
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" style="color: black;" id="exampleModalLabel">Save Article to Timeline</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6 style="color:black;">Add to a new timeline</h6>
+          <h6 style="color:black;">Add to an existing timeline</h6>
+          <%= simple_form_for @saved_article do |f| %>
+              <%= f.input :timeline, collection: @timelines.pluck(:topic) %>
+              <%= f.hidden_field :article_id, value: article.id %>
+              <%= f.button :submit %>
+              <% end %>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Your Timelines
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <%  @timelines.each do |timeline| %>
+              
+              <%= link_to timeline.topic, saved_articles_path(timeline, article), method: :post, class: "dropdown-item" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ireland" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-ireland-outline">Save changes</button>
+        </div>
+      </div>
+      </div>
+    </div> 
+        </div>
+        
+      </div>	
+      <% end %>
+			</li>
+		</ol>
+	</div> <!-- .events-content -->
+</section>
 
   <% @index_timeline.each do |article| %>
     <div class="index-card">
@@ -52,3 +137,5 @@
 
 
 
+
+<%= javascript_pack_tag 'timeline' %>

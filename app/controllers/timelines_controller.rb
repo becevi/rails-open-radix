@@ -27,11 +27,12 @@ class TimelinesController < ApplicationController
   end
 
   def edit
+    @timeline = Timeline.find(params[:id])
   end
 
 def update
-  @timeline.update(timeline_params)
-  if @timeline.save
+  @timeline = Timeline.find(params[:id])
+  if @timeline.update(timeline_params)
     redirect_to timeline_path(@timeline)
   else
     render :edit

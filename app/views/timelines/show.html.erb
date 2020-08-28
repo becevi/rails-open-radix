@@ -1,15 +1,32 @@
 <div class="topic-timeline">
 <% if @timeline %>
-<h1><%= @timeline.topic  %></h1>
-<h2><%= @timeline.description %></h2>
+  <h1><%= @timeline.topic=%></h1>
+  <h2><%= @timeline.description=%></h2>
 <% end %>
 </div>
+<div class="edit-delete-btn">
+        <%= link_to 'Edit', edit_timeline_path, class: "btn-ireland"%>
+        <%= link_to "Delete",
+         timeline_path(@timeline),
+         method: :delete,
+         data: { confirm: 'Are you sure you want to delete your timeline?'},
+         class: "btn-ireland" %>
+  </div>
 
 <% if @timeline %>
-<%  @timeline.articles.each do |article| %>
-  <%= article.title %>
-<% end %>
-<% end %>
+  <%  @timeline.saved_articles.each do |saved_article| %>
+    <%= saved_article.article.title %>
+      <%= link_to "See full article", saved_article.article.article_url, target: :_blank%>
+    <div class="delete-article-btn">
+     <%= link_to "Delete",
+      saved_article_path(saved_article.id),
+      method: :delete,
+      data: { confirm: 'Remove article from timeline?'},
+      class: "btn-ireland" %>
+   </div>
+    <hr>
+  <% end %>
 
 
+<% end %>
 

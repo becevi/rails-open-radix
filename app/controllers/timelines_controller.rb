@@ -38,6 +38,7 @@ def update
 end
 
   def destroy
+    @timeline = Timeline.find(params[:id])
     @timeline.destroy
     redirect_to timelines_path
   end

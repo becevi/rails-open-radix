@@ -34,14 +34,16 @@
         <% date_format = date.strftime('%d/%m/%Y')%> 
         <li class="<%='selected' if index == 0%>" data-date="<%=date_format%>"><!-- here -->
           <div class="index-card">
-          <em><%= article.published_at %> | <%= article.source %></em><!-- here -->
+          <p><%= article.published_at %> | <%= article.source %></p><!-- here -->
+          <h3><%= article.title %></h3>
           <p><%= article.description.truncate(100) %></p><!-- here -->
         <div class="index-card-links">
         <%= link_to "See full article", article.article_url, target: :_blank, class: "btn btn-ireland" %>
-        <button type="button" class="btn btn-ireland-outline" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class="btn btn-ireland-outline" data-toggle="modal" data-target='#modal-article<%= article.id %>'>
           Save Article
         </button> 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id='modal-article<%= article.id %>' tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -51,61 +53,6 @@
           </button>
         </div>
         <div class="modal-body">
-          <h6 style="color:black;">Add to a new timeline</h6>
-          <h6 style="color:black;">Add to an existing timeline</h6>
-          <%= simple_form_for @saved_article do |f| %>
-              <%= f.input :timeline, collection: @timelines.pluck(:topic) %>
-              <%= f.hidden_field :article_id, value: article.id %>
-              <%= f.button :submit %>
-              <% end %>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Your Timelines
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <%  @timelines.each do |timeline| %>
-              
-              <%= link_to timeline.topic, saved_articles_path(timeline, article), method: :post, class: "dropdown-item" %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-ireland" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-ireland-outline">Save changes</button>
-        </div>
-      </div>
-      </div>
-    </div> 
-        </div>
-        
-      </div>	
-      <% end %>
-			</li>
-		</ol>
-	</div> <!-- .events-content -->
-</section>
-
-  <% @index_timeline.each do |article| %>
-    <div class="index-card">
-      <p><%= article.published_at %> | <%= article.source %></p>
-      <h5><%=  article.title %> </h5>
-      <p><%= article.description.truncate(100) %></p>
-      <div class="index-card-links">
-      <%= link_to "See full article", article.article_url, target: :_blank, class: "btn btn-ireland" %>
-      <button type="button" class="btn btn-ireland-outline" data-toggle="modal" data-target='#modal-article<%= article.id %>'>
-        Save Article
-      </button>
-      <div class="modal fade" id='modal-article<%= article.id %>' tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" style="color: black;" id="exampleModalLabel">Save Article to Timeline</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
         <h6 style="color:black;">Add to a new timeline</h6>
           <%= simple_form_for @timeline do |f| %>
             <%= f.input :topic, placeholder: 'Enter topic name' %>
@@ -119,23 +66,23 @@
             <%= f.button :submit, "Add", class: "btn btn-ireland" %>
             <% end %>
       </div>
+  
       <div class="modal-footer">
         <button type="button" class="btn btn-ireland" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-ireland-outline">Save changes</button>
       </div>
-    </div>
-  </div>
-</div>
       </div>
-
-    </div>
-
-
-<% end %>
-
-
-
-
+      </div>
+    </div> 
+        </div>
+        
+      </div>	
+			</li>
+      <% end %>
+		</ol>
+	</div> <!-- .events-content -->
+</section>
+  
 
 
 <%= javascript_pack_tag 'timeline' %>

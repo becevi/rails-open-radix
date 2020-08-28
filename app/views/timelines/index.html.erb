@@ -1,4 +1,4 @@
-<h1> <span style="color: #1EDD88"><%= current_user.name.downcase %>'s</span> timelines</h1>
+<h1> <span style="color: green"><%= current_user.name.downcase %>'s</span> timelines</h1>
 <hr>
 
 
@@ -9,9 +9,8 @@
   <div class="timeline-card">
     <h3> <%= timeline.topic %> </h3>
     <h6><%= timeline.saved_articles.count %> articles</h6>
-    <%= link_to "View this timeline", timeline_path(timeline), class: "btn btn-ireland btn-block mb-1" %>
-    <%= link_to "Delete this timeline", timeline_path(timeline), class: "btn btn-ireland-outline btn-block", method: :delete,
-                  data: { confirm: "Are you sure?" } %>
+    <%= link_to "View timeline", timeline_path(timeline), class: "btn btn-ireland btn-block mb-1" %>
+
   </div>
   <% end %>
 

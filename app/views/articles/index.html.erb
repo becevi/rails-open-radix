@@ -3,15 +3,15 @@
 
   <% @index_timeline.each do |article| %>
     <div class="index-card">
-      <p><%= article.published_at %> | <%= article.source %></p> 
+      <p><%= article.published_at %> | <%= article.source %></p>
       <h5><%=  article.title %> </h5>
       <p><%= article.description.truncate(100) %></p>
       <div class="index-card-links">
       <%= link_to "See full article", article.article_url, target: :_blank, class: "btn btn-ireland" %>
-      <button type="button" class="btn btn-ireland-outline" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="btn btn-ireland-outline" data-toggle="modal" data-target='#modal-article<%= article.id %>'>
         Save Article
-      </button> 
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      </button>
+      <div class="modal fade" id='modal-article<%= article.id %>' tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -40,12 +40,12 @@
       </div>
     </div>
   </div>
-</div> 
+</div>
       </div>
-      
+
     </div>
-          
-  
+
+
 <% end %>
 
 

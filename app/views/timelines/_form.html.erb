@@ -1,13 +1,13 @@
-<%= simple_form_for(@timeline) do |f| %>
+<%= simple_form_for(timeline) do |f| %>
     <div class="form-group">
       <div class="field">
-        <%= f.input :title, class: "form-control" %>
+        <%= f.input :topic, class: "form-control" %>
       </div>
       <div class="field">
         <%= f.input :description, class: "form-control", as: :text, :input_html => { class: 'test', :cols => 5, :rows => 6 } %>
       </div>
       <div class="field">
-        <%= f.button :submit, class: "btn btn-block dark-blue-btn" %>
+        <%= f.button :submit, class: "btn btn-block btn-ireland" %>
       </div>
     </div>
 <% end %>

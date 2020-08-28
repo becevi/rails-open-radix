@@ -1,4 +1,7 @@
 
+<h2>Results....</h2>
+
+
 <section class="cd-horizontal-timeline">
 	<div class="timeline">
 		<div class="events-wrapper">
@@ -12,6 +15,7 @@
 					<li><a href="#0" data-date="<%=date_format%>" class="<%='selected' if index == 0%>"><%=date_format%></a></li>
         <% end %>
 				</ol>
+
 
 				<span class="filling-line" aria-hidden="true"></span>
 			</div> <!-- .events --> 
@@ -81,5 +85,57 @@
 		</ol>
 	</div> <!-- .events-content -->
 </section>
+
+  <% @index_timeline.each do |article| %>
+    <div class="index-card">
+      <p><%= article.published_at %> | <%= article.source %></p>
+      <h5><%=  article.title %> </h5>
+      <p><%= article.description.truncate(100) %></p>
+      <div class="index-card-links">
+      <%= link_to "See full article", article.article_url, target: :_blank, class: "btn btn-ireland" %>
+      <button type="button" class="btn btn-ireland-outline" data-toggle="modal" data-target='#modal-article<%= article.id %>'>
+        Save Article
+      </button>
+      <div class="modal fade" id='modal-article<%= article.id %>' tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color: black;" id="exampleModalLabel">Save Article to Timeline</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6 style="color:black;">Add to a new timeline</h6>
+          <%= simple_form_for @timeline do |f| %>
+            <%= f.input :topic, placeholder: 'Enter topic name' %>
+            <input name="saved_article_id" type="hidden" value="<%= article.id %>" />
+            <%= f.button :submit, class: "btn btn-ireland" %>
+          <% end %>
+        <h6 style="color:black;">Add to an existing timeline</h6>
+        <%= simple_form_for @saved_article do |f| %>
+            <%= f.input :timeline, collection: @timelines.pluck(:topic) %>
+            <%= f.hidden_field :article_id, value: article.id %>
+            <%= f.button :submit, "Add", class: "btn btn-ireland" %>
+            <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ireland" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-ireland-outline">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+
+    </div>
+
+
+<% end %>
+
+
+
+
+
 
 <%= javascript_pack_tag 'timeline' %>

@@ -25,9 +25,18 @@ class ApiArticleFetcher
 
   def fetch_articles
     @newsapi = News.new("0d80da2ec0f6419cba14320e47c559cb") 
-    @newsapi.get_everything(q: @query,
-      language: 'en',
-      sortBy: 'publishedAt',
-      pageSize: 100)
+    if @query == ""
+      @newsapi.get_everything(
+        qInTitle: "trump",
+        language: 'en',
+        sortBy: 'publishedAt',
+        pageSize: 100)
+    else
+      @newsapi.get_everything(
+        qInTitle: @query,
+        language: 'en',
+        sortBy: 'publishedAt',
+        pageSize: 100)
+    end
   end
 end

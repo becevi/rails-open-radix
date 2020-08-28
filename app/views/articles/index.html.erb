@@ -34,7 +34,8 @@
         <% date_format = date.strftime('%d/%m/%Y')%> 
         <li class="<%='selected' if index == 0%>" data-date="<%=date_format%>"><!-- here -->
           <div class="index-card">
-          <em><%= article.published_at %> | <%= article.source %></em><!-- here -->
+          <p><%= article.published_at %> | <%= article.source %></p><!-- here -->
+          <h3><%= article.title %></h3>
           <p><%= article.description.truncate(100) %></p><!-- here -->
         <div class="index-card-links">
         <%= link_to "See full article", article.article_url, target: :_blank, class: "btn btn-ireland" %>

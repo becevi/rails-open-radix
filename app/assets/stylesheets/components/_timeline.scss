@@ -10,7 +10,7 @@ Primary style
   box-sizing: border-box;
 }
 
-html {
+section {
   font-size: 62.5%;
 }
 
@@ -242,6 +242,7 @@ Main Components
   -webkit-transition: height 0.4s;
   -moz-transition: height 0.4s;
   transition: height 0.4s;
+  z-index: 2000;
 }
 .cd-horizontal-timeline .events-content li {
   position: absolute;

@@ -19,6 +19,7 @@ class TimelinesController < ApplicationController
     @timeline = Timeline.new(timeline_params)
     @timeline.user = current_user
     if @timeline.save!
+      @saved_article = SavedArticle.create(article_id: params[:saved_article_id], timeline: @timeline)
       redirect_to timelines_path(@timeline)
     else
       render :new

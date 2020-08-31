@@ -1,7 +1,7 @@
 class TimelinesController < ApplicationController
 
   def index
-    @timelines = Timeline.all
+    @timelines = Timeline.where(user: current_user)
   end
   def show
     @timelines = Timeline.all

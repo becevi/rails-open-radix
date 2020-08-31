@@ -9,18 +9,18 @@
 				<ol>
         <!-- year-month-day -->
         <!-- day/month/year -->
-        <% @index_timeline.each_with_index do |article, index| %>  
+        <% @index_timeline.each_with_index do |article, index| %>
           <%date = article.published_at%>
-          <% date_format = date.strftime('%d/%m/%Y')%> 
+          <% date_format = date.strftime('%d/%m/%Y')%>
 					<li><a href="#0" data-date="<%=date_format%>" class="<%='selected' if index == 0%>"><%=date_format%></a></li>
         <% end %>
 				</ol>
 
 
 				<span class="filling-line" aria-hidden="true"></span>
-			</div> <!-- .events --> 
+			</div> <!-- .events -->
 		</div> <!-- .events-wrapper -->
-			
+
 		<ul class="cd-timeline-navigation">
 			<li><a href="#0" class="prev inactive">Prev</a></li><!-- here -->
 			<li><a href="#0" class="next">Next</a></li><!-- here -->
@@ -31,17 +31,17 @@
 		<ol>
     <% @index_timeline.each_with_index do |article, index| %>
         <%date = article.published_at%>
-        <% date_format = date.strftime('%d/%m/%Y')%> 
+        <% date_format = date.strftime('%d/%m/%Y')%>
         <li class="<%='selected' if index == 0%>" data-date="<%=date_format%>"><!-- here -->
           <div class="index-card">
           <p><%= article.published_at %> | <%= article.source %></p><!-- here -->
           <h4><%= article.title.truncate(65) %></h4>
-          <p><%= article.description.truncate(100) %></p><!-- here -->
+          <p><%= article.description&.truncate(100) %></p><!-- here -->
         <div class="index-card-links">
         <%= link_to "See full article", article.article_url, target: :_blank, class: "btn btn-ireland" %>
         <button type="button" class="btn btn-ireland-outline" data-toggle="modal" data-target='#modal-article<%= article.id %>'>
           Save Article
-        </button> 
+        </button>
   <div class="modal fade" id='modal-article<%= article.id %>' tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
     <div class="modal-dialog">
@@ -67,22 +67,22 @@
             <%= f.button :submit, "Add", class: "btn btn-ireland" %>
             <% end %>
         </div>
-  
+
         <div class="modal-footer">
           <button type="button" class="btn btn-ireland-outline" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
-  </div> 
   </div>
-        
-      </div>	
+  </div>
+
+      </div>
 			</li>
       <% end %>
 		</ol>
 	</div> <!-- .events-content -->
 </section>
-  
+
 
 
 <%= javascript_pack_tag 'timeline' %>

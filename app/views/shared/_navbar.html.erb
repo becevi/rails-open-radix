@@ -29,9 +29,9 @@
         <li class="nav-item-user dropdown mt-2">
 
          <li class="nav-item mr-3">
-          <%= link_to "My Timelines", timelines_path, class: current_class?(timelines_path) %>
+          <%= link_to "my timelines", timelines_path, class: current_class?(timelines_path) %>
         </li>
-        <li class="nav-item dropdown mt-2">
+        <li class="nav-item-user dropdown mt-2">
              <i class="fas fa-user avatar ml-1 fa-lg mb-1" id="navbarDropdown" style="color: #181818; cursor: pointer" data-toggle="dropdown" aria-haspopup='true' aria-expanded='false'></i>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>

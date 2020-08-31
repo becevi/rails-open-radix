@@ -1,11 +1,8 @@
- <div class="flexbox back-link justify-left ">
-    <%= link_to  'Back to my timelines', timelines_path(@timeline), class: "back-to-link" %>
-  </div>
 
 <div class="d-flex flex-row">
   <div class="topic-timeline">
 <% if @timeline %>
-  <h1><%= @timeline.topic=%></h1>
+  <h4><%= @timeline.topic=%></h4>
   <h2><%= @timeline.description=%></h2>
 <% end %>
 </div>

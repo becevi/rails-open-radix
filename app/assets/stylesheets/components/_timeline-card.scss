@@ -9,7 +9,10 @@
   transition: 0.3s all;
   &:hover {
     border: 1px solid green;
+    transform: translateY(-5px);
+    transition: all 500ms ease;
     transform: translateY(-3px);
+
   }
 }
 

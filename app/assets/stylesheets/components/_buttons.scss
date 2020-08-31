@@ -52,4 +52,12 @@
 
 }
 
+.fa-search {
+  font-size: 27px;
+  color: $green;
+  padding-left: 0px;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
 

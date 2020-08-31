@@ -1,6 +1,17 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "open_radix", root_path, class: "navbar-brand ml-2" %>
+  <%= form_tag articles_path, class: "form-inline", style: is_home?(root_path), method: :get do %>
+        
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control search-input mr-1 radius-1px",
+          autocomplete: "off",
+          placeholder: "Get the original source of your news..."
+          %>
+        
 
+      <%= submit_tag "Search", class: "btn btn-ireland"  %>
+      <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -15,10 +26,14 @@
         <li class="nav-item">
           <%= link_to "about", about_path, class: current_class?(about_path) %>
         </li>
-        <li class="nav-item dropdown mt-2">
+        <li class="nav-item-user dropdown mt-2">
+
+         <li class="nav-item mr-3">
+          <%= link_to "my timelines", timelines_path, class: current_class?(timelines_path) %>
+        </li>
+        <li class="nav-item-user dropdown mt-2">
              <i class="fas fa-user avatar ml-1 fa-lg mb-1" id="navbarDropdown" style="color: #181818; cursor: pointer" data-toggle="dropdown" aria-haspopup='true' aria-expanded='false'></i>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My Timelines", timelines_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

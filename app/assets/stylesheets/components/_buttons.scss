@@ -1,15 +1,20 @@
 .btn-ireland {
   background-color: $green;
   color: white;
+  border-radius: 20px;
 }
 
 .btn-ireland-outline {
   background-color: transparent;
   color: $green;
   border: 1px solid white;
+  padding: 4px;
+  padding-right: 6px;
+  padding-left: 6px;
   &:hover {
     color: white;
     border: 1px solid $green;
+    transition: all 500ms ease;
   }
 }
 
@@ -17,17 +22,17 @@
   background-color: $green;
   color: white;
   border-color: $radix-black;
+  &:hover {
+   background-color: $green;
+   filter: grayscale(0.3);
+   border-color: $radix-black;
+   color: $radix-black;
+  }
 }
-
-.devise-btn:hover {
- background-color: $green;
- filter: grayscale(0.3);
- border-color: $radix-black;
- color: $radix-black;
-}
-
 
 .btn-small {
   width: 180px;
 
 }
+
+

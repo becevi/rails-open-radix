@@ -1,8 +1,32 @@
 .fa-user {
    font-size: 21px;
    padding-left: 0px;
+   &:hover {
+    transform: scale(1.1);
+    transition: all 400ms ease;
+   }
 }
 
-.fa-user:hover {
-   transform: scale(1.1)
+
+.fa-trash-alt {
+  color: $green;
+   &:hover {
+    color: white;
+    text-decoration: none;
+    transition: all 500ms ease;
+  }
+}
+
+
+.fa-edit {
+  color: $green;
+  &:hover {
+  color: white;
+  text-decoration: none;
+  transition: all 500ms ease;
+  }
+}
+
+.edit-delete-btn  {
+  text-decoration: none;
 }

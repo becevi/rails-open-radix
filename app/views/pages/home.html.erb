@@ -1,18 +1,16 @@
 
-  
-  
   <div class="heading-container">
-    
+
     <h1><span id="typed"></span></h1>
     <%= form_tag articles_path, class: "form-inline", method: :get do %>
-        
+
           <%= text_field_tag :query,
           params[:query],
           class: "form-control search-input mr-1 radius-1px",
           autocomplete: "off",
           placeholder: "Get the original source of your news..."
           %>
-        
+
 
       <%= submit_tag "Search", class: "btn btn-ireland"  %>
       <% end %>
@@ -26,7 +24,7 @@
       </ul>
     </div>
   </div>
-  
-    
+
+
 
 

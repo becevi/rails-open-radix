@@ -21,7 +21,7 @@ body {
   padding: 0;
   background-color: #181818;
   color: white;
-  background-image: url("opaque-brain.png");
+  background-image: image-url("opaque-brain.png");
   background-position: -40% 15%;
   background-size: 1050px 1100px;
   background-repeat: no-repeat;
@@ -31,3 +31,6 @@ body {
 .article-name {
   width: 700px;
 }
+
+
+

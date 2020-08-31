@@ -274,6 +274,7 @@ Main Components
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
+  height: 500px;
 }
 .cd-horizontal-timeline .events-content li.enter-right, .cd-horizontal-timeline .events-content li.leave-right {
   -webkit-animation-name: cd-enter-right;

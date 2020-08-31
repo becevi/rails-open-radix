@@ -1,17 +1,20 @@
+
 <div class="d-flex flex-row">
   <div class="topic-timeline">
 <% if @timeline %>
-  <h1><%= @timeline.topic=%></h1>
+  <h4><%= @timeline.topic=%></h4>
   <h2><%= @timeline.description=%></h2>
 <% end %>
 </div>
-<div class="edit-delete-btn ml-3">
-        <%= link_to 'Edit timeline', edit_timeline_path, class: "btn btn-ireland"%>
-        <%= link_to "Delete timeline",
-         timeline_path(@timeline),
+<div class="edit-delete-btn ml-3 mb-5">
+        <%= link_to edit_timeline_path do %>
+        <i class="far fa-edit"></i>
+        <% end %>
+        <%= link_to timeline_path(@timeline),
          method: :delete,
-         data: { confirm: 'Are you sure you want to delete your timeline?'},
-         class: "btn btn-ireland" %>
+         data: { confirm: 'Are you sure you want to delete your timeline?'} do %>
+         <i class="far fa-trash-alt"></i>
+        <% end %>
   </div>
 </div>
 
@@ -20,18 +23,19 @@
   <%  @timeline.saved_articles.each do |saved_article| %>
   <div class="d-flex flex-row">
      <div class="article-name mb-3">
+      <%= link_to  saved_article.article.article_url, class: "article-link" do %>
       <%= saved_article.article.title %>
      </div>
      <div class="see-more ml-3">
-      <%= link_to "See full article", saved_article.article.article_url, target: :_blank, class: "see-more-link"%>
+      <% end %>
     </div>
   </div>
     <div class="delete-article-btn">
-     <%= link_to "Delete",
-      saved_article_path(saved_article.id),
+     <%= link_to saved_article_path(saved_article.id),
       method: :delete,
-      data: { confirm: 'Remove article from timeline?'},
-      class: "btn btn-ireland" %>
+      data: { confirm: 'Remove article from timeline?'} do %>
+      <i class="far fa-trash-alt"></i>
+      <% end %>
    </div>
     <hr>
   <% end %>

@@ -9,6 +9,7 @@
   &:hover {
     border: 1px solid green;
     transform: translateY(-5px);
+    transition: all 500ms ease;
   }
 }
 

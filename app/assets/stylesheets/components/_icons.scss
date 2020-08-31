@@ -2,7 +2,8 @@
    font-size: 21px;
    padding-left: 0px;
    &:hover {
-    transform: scale(1.1)
+    transform: scale(1.1);
+    transition: all 400ms ease;
    }
 }
 
@@ -11,6 +12,8 @@
   color: $green;
    &:hover {
     color: white;
+    text-decoration: none;
+    transition: all 500ms ease;
   }
 }
 
@@ -19,5 +22,11 @@
   color: $green;
   &:hover {
   color: white;
+  text-decoration: none;
+  transition: all 500ms ease;
   }
+}
+
+.edit-delete-btn  {
+  text-decoration: none;
 }

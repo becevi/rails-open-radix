@@ -5,13 +5,30 @@
 }
 
 .heading-container {
-  display: flex;
-  flex-direction: column;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 55%;
   transform: translate(-50%, -50%);
-  transition: background-color .5s;
+  &:hover .search-instructions-card {
+    opacity: 1.0;
+  }
+}
+
+.search-instructions-card {
+  width: 500px;
+  background-color: rgba(56, 56, 56, .7);
+  padding: 10px;
+  opacity: 0.0;
+  transition: opacity 0.5s;
+}
+
+.search-instructions-card ul {
+  list-style: none;
+  margin: 0;
+}
+
+.example-search {
+  color: $green;
 }
 
 .heading-font {

@@ -205,17 +205,19 @@ jQuery(document).ready(function($){
 		var dateArrays = [];
 		events.each(function(){
 			var dateComp = $(this).data('date').split('/'),
-				newDate = new Date(dateComp[2], dateComp[1]-1, dateComp[0]);
-			dateArrays.push(newDate);
+				newDate = new Date(dateComp[5],dateComp[4], dateComp[3], dateComp[2], dateComp[1], dateComp[0]);
+			// debugger;
+				dateArrays.push(newDate);
 		});
 	    return dateArrays;
 	}
-
+	
 	function parseDate2(events) {
 		var dateArrays = [];
 		events.each(function(){
 			var singleDate = $(this),
 				dateComp = singleDate.data('date').split('T');
+				console.log(dateComp)
 			if( dateComp.length > 1 ) { //both DD/MM/YEAR and time are provided
 				var dayComp = dateComp[0].split('/'),
 					timeComp = dateComp[1].split(':');

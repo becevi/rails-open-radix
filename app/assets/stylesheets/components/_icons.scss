@@ -1,8 +1,23 @@
 .fa-user {
    font-size: 21px;
    padding-left: 0px;
+   &:hover {
+    transform: scale(1.1)
+   }
 }
 
-.fa-user:hover {
-   transform: scale(1.1)
+
+.fa-trash-alt {
+  color: $green;
+   &:hover {
+    color: white;
+  }
+}
+
+
+.fa-edit {
+  color: $green;
+  &:hover {
+  color: white;
+  }
 }

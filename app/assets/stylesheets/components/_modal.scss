@@ -1,3 +1,5 @@
+
+
 .modal-content {
   background-color: rgba(56, 56, 56, 0.99);
 }
@@ -8,6 +10,7 @@
 
 .modal-body {
   color: white;
+  overflow: auto;
 }
 
 #exampleModalLabel {

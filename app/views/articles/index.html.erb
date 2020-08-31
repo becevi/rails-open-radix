@@ -11,10 +11,10 @@
         <!-- day/month/year -->
         <% @index_timeline.each_with_index do |article, index| %>  
           <%date = article.published_at%>
-          <% date_format = date.strftime('%d/%m/%Y')%> 
+          <% date_format = date.strftime('%d/%m/%Y T %H:%M:%S')%> 
 					<li><a href="#0" data-date="<%=date_format%>" class="<%='selected' if index == 0%>"><%=date_format%></a></li>
-        <% end %>
 				</ol>
+        <% end %>
 
 
 				<span class="filling-line" aria-hidden="true"></span>
@@ -31,7 +31,7 @@
 		<ol>
     <% @index_timeline.each_with_index do |article, index| %>
         <%date = article.published_at%>
-        <% date_format = date.strftime('%d/%m/%Y')%> 
+        <% date_format = date.strftime('%d/%m/%Y T %H:%M:%S')%>  
         <li class="<%='selected' if index == 0%>" data-date="<%=date_format%>"><!-- here -->
           <div class="index-card">
           <p><%= article.published_at %> | <%= article.source %></p><!-- here -->

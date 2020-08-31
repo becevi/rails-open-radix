@@ -57,8 +57,9 @@
           <%= simple_form_for @timeline do |f| %>
             <%= f.input :topic, placeholder: 'Enter topic name' %>
             <input name="saved_article_id" type="hidden" value="<%= article.id %>" />
-            <%= f.button :submit, class: "btn btn-ireland" %>
+            <%= f.button :submit, class: "btn btn-ireland mb-1" %>
           <% end %>
+          <hr>
         <h6 style="color:black;">Add to an existing timeline</h6>
         <%= simple_form_for @saved_article do |f| %>
             <%= f.input :timeline, collection: @timelines.pluck(:topic) %>
@@ -69,7 +70,6 @@
   
       <div class="modal-footer">
         <button type="button" class="btn btn-ireland" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-ireland-outline">Save changes</button>
       </div>
       </div>
       </div>

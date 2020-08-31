@@ -10,16 +10,23 @@
           params[:query],
           class: "form-control search-input mr-1 radius-1px",
           autocomplete: "off",
-          placeholder: "Search"
+          placeholder: "Get the original source of your news..."
           %>
         
 
-      <%= submit_tag "Find Source", class: "btn btn-ireland"  %>
+      <%= submit_tag "Search", class: "btn btn-ireland"  %>
       <% end %>
+      <div class="search-instructions-card mt-3">
+      <ul>
+        <li><strong>Search instructions:</strong></li>
+        <br>
+        <li>Add a "+" before each search term to require that term in the article headline</li>
+        <br>
+        <li class="example-search"><em>Example: +Jacob Blake +Police</em></li>
+      </ul>
+    </div>
   </div>
   
-  <script>
-   
-  </script>
+    
 
 

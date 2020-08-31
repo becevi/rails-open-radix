@@ -274,6 +274,7 @@ Main Components
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
+  height: 500px;
 }
 .cd-horizontal-timeline .events-content li.enter-right, .cd-horizontal-timeline .events-content li.leave-right {
   -webkit-animation-name: cd-enter-right;
@@ -310,7 +311,7 @@ Main Components
   content: '- ';
 }
 .cd-horizontal-timeline .events-content p {
-  font-size: 1.4rem;
+  font-size: 20px;
   color: #959595;
 }
 .cd-horizontal-timeline .events-content em, .cd-horizontal-timeline .events-content p {
@@ -324,7 +325,7 @@ Main Components
     font-size: 2rem;
   }
   .cd-horizontal-timeline .events-content p {
-    font-size: 1.8rem;
+    font-size: 16px;
   }
 }
 

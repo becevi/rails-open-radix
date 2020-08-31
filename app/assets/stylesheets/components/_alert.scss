@@ -1,6 +1,9 @@
 .alert {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  bottom: 75px;
+  right: 50px;
   z-index: 1000;
+  background-color: rgba(56, 56, 56, 1);
+  color: $green;
+  border: none;
 }

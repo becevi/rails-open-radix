@@ -4,4 +4,11 @@
   background: rgba(24, 24, 24, 0.7);
   padding: 10px;
   border: 1px solid gray;
+  text-decoration: none;
+  box-shadow: 3px 4px #282828;
+  &:hover {
+    border: 1px solid green;
+    transform: translateY(-5px);
+  }
 }
+

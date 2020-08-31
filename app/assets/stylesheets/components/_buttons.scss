@@ -1,7 +1,18 @@
+.btn:focus {
+  border-color: $green;
+  box-shadow: none; 
+  -webkit-box-shadow: none;
+}
+
 .btn-ireland {
   background-color: $green;
   color: white;
   border-radius: 20px;
+  &:focus {
+    border-color: $green;
+    box-shadow: none; 
+  -webkit-box-shadow: none;
+  }
 }
 
 .btn-ireland-outline {
@@ -16,7 +27,13 @@
     border: 1px solid $green;
     transition: all 500ms ease;
   }
+  &:focus {
+    border-color: $green;
+    box-shadow: none; 
+  -webkit-box-shadow: none;
+  }
 }
+
 
 .devise-btn {
   background-color: $green;

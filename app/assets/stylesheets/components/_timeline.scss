@@ -65,13 +65,13 @@ Main Components
 }
 .cd-horizontal-timeline .events-wrapper::before {
   left: 0;
-  background-image: -webkit-linear-gradient( left , #f8f8f8, rgba(248, 248, 248, 0));
-  background-image: linear-gradient(to right, #f8f8f8, rgba(248, 248, 248, 0));
+  // background-image: -webkit-linear-gradient( left , #f8f8f8, rgba(248, 248, 248, 0));
+  // background-image: linear-gradient(to right, #f8f8f8, rgba(248, 248, 248, 0));
 }
 .cd-horizontal-timeline .events-wrapper::after {
   right: 0;
-  background-image: -webkit-linear-gradient( right , #f8f8f8, rgba(248, 248, 248, 0));
-  background-image: linear-gradient(to left, #f8f8f8, rgba(248, 248, 248, 0));
+  // background-image: -webkit-linear-gradient( right , #f8f8f8, rgba(248, 248, 248, 0));
+  // background-image: linear-gradient(to left, #f8f8f8, rgba(248, 248, 248, 0));
 }
 .cd-horizontal-timeline .events {
   /* this is the grey line/timeline */
@@ -114,9 +114,9 @@ Main Components
   bottom: 0;
   z-index: 2;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: .8rem;
   padding-bottom: 15px;
-  color: #383838;
+  color: white;
   /* fix bug on Safari - text flickering while timeline translates */
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
@@ -234,6 +234,18 @@ Main Components
   border-color: #dfdfdf;
 }
 
+.cd-timeline-navigation li {
+  list-style: none;
+}
+
+.events ol {
+  list-style: none;
+}
+
+.events li {
+  list-style: none;
+}
+
 .cd-horizontal-timeline .events-content {
   position: relative;
   width: 100%;
@@ -263,6 +275,7 @@ Main Components
   -webkit-animation-timing-function: ease-in-out;
   -moz-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
+  list-style: none;
 }
 .cd-horizontal-timeline .events-content li.selected {
   /* visible event content */
@@ -275,25 +288,30 @@ Main Components
   -o-transform: translateX(0);
   transform: translateX(0);
   height: 500px;
+  list-style: none;
 }
 .cd-horizontal-timeline .events-content li.enter-right, .cd-horizontal-timeline .events-content li.leave-right {
   -webkit-animation-name: cd-enter-right;
   -moz-animation-name: cd-enter-right;
   animation-name: cd-enter-right;
+  list-style: none;
 }
 .cd-horizontal-timeline .events-content li.enter-left, .cd-horizontal-timeline .events-content li.leave-left {
   -webkit-animation-name: cd-enter-left;
   -moz-animation-name: cd-enter-left;
   animation-name: cd-enter-left;
+  list-style: none;
 }
 .cd-horizontal-timeline .events-content li.leave-right, .cd-horizontal-timeline .events-content li.leave-left {
   -webkit-animation-direction: reverse;
   -moz-animation-direction: reverse;
   animation-direction: reverse;
+  list-style: none;
 }
 .cd-horizontal-timeline .events-content li > * {
   max-width: 800px;
   margin: 0 auto;
+  list-style: none;
 }
 .cd-horizontal-timeline .events-content h2 {
   font-weight: bold;

@@ -10,9 +10,9 @@ module ApplicationHelper
 
   def is_home?(test_path)
     if request.path == test_path
-      return "display: block;"
-    else
       return "display: none;"
+    else
+      return "display: block;"
     end
   end
 

@@ -6,10 +6,13 @@
   border: 1px solid gray;
   text-decoration: none;
   box-shadow: 3px 4px #282828;
+  transition: 0.3s all;
   &:hover {
     border: 1px solid green;
     transform: translateY(-5px);
     transition: all 500ms ease;
+    transform: translateY(-3px);
+
   }
 }
 

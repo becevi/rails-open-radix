@@ -1,8 +1,9 @@
 .index-card {
-  background-color: $radix-black;
   width: 50%;
-  border: 1px solid white;
   margin: 1rem 0;
-  padding: 5px;
   overflow: visible;
+  background-color: rgba(56, 56, 56, .4);
+  padding: 10px;
+  border-radius: 20px;
+  transition: opacity 0.5s;
 }

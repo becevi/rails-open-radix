@@ -33,8 +33,8 @@ Main Components
 .cd-horizontal-timeline .timeline {
   position: relative;
   height: 100px;
-  width: 90%;
-  max-width: 800px;
+  width: 100%;
+  max-width: 840px;
   margin: 0 auto;
 }
 .cd-horizontal-timeline .events-wrapper {
@@ -98,6 +98,14 @@ Main Components
   -moz-transition: -moz-transform 0.3s;
   transition: transform 0.3s;
 }
+
+.cd-horizontal-timeline .events a div{
+  display: none;
+}
+
+
+
+
 .cd-horizontal-timeline .events a {
   position: absolute;
   bottom: 0;
@@ -113,6 +121,14 @@ Main Components
   -o-transform: translateZ(0);
   transform: translateZ(0);
 }
+.cd-horizontal-timeline .events a:hover div{
+  position: absolute;
+  display: inline;
+  color: white;
+  bottom: 45px;
+  height: 10px;
+  left: -25px;
+}
 .cd-horizontal-timeline .events a::after {
   /* this is used to create the event spot */
   content: '';
@@ -124,7 +140,7 @@ Main Components
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
-  bottom: -6px;
+  bottom: -10px;
   height: 20px;
   width: 20px;
   border-radius: 50%;
@@ -171,7 +187,7 @@ Main Components
   transform: translateY(-50%);
   height: 34px;
   width: 34px;
-  border-radius: 50%;
+  border-radius: 0px 50px 50px 0px;
   border: 2px solid #dfdfdf;
   /* replace text with an icon */
   overflow: hidden;

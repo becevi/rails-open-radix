@@ -14,7 +14,7 @@
 
           <% date_format = date.strftime('%d/%m/%Y T %H:%M:%S')%> 
 
-					<li><a href="#0" data-date="<%=date_format%>" class="<%='selected' if index == 0%>"><%=date_format%></a></li>
+					<li><a href="#0" data-date="<%=date_format%>" class="<%='selected' if index == 0%>"><div><%=date_format.gsub("T", "")%></div></a></li>
 				</ol>
         <% end %>
 

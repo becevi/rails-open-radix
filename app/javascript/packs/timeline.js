@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 	var timelines = $('.cd-horizontal-timeline'),
-		eventsMinDistance = 35;
+		eventsMinDistance = 11;
 
 	(timelines.length > 0) && initTimeline(timelines);
 
@@ -122,7 +122,7 @@ jQuery(document).ready(function($){
 		var eventStyle = window.getComputedStyle(selectedEvent.get(0), null),
 			eventLeft = eventStyle.getPropertyValue("left"),
 			eventWidth = eventStyle.getPropertyValue("width");
-		eventLeft = Number(eventLeft.replace('px', '')) + Number(eventWidth.replace('px', ''))/2;
+		eventLeft = Number(eventLeft.replace('px', '')) + Number(eventWidth.replace('px', '')) + 10;
 		var scaleValue = eventLeft/totWidth;
 		setTransformValue(filling.get(0), 'scaleX', scaleValue);
 	}
@@ -130,7 +130,7 @@ jQuery(document).ready(function($){
 	function setDatePosition(timelineComponents, min) {
 		for (i = 0; i < timelineComponents['timelineDates'].length; i++) { 
 		    var distance = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][i]),
-		    	distanceNorm = Math.round(distance/timelineComponents['eventsMinLapse']) + 2;
+		    	distanceNorm = Math.round(distance/timelineComponents['eventsMinLapse']) + 3;
 		    timelineComponents['timelineEvents'].eq(i).css('left', distanceNorm*min+'px');
 		}
 	}
@@ -138,7 +138,7 @@ jQuery(document).ready(function($){
 	function setTimelineWidth(timelineComponents, width) {
 		var timeSpan = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][timelineComponents['timelineDates'].length-1]),
 			timeSpanNorm = timeSpan/timelineComponents['eventsMinLapse'],
-			timeSpanNorm = Math.round(timeSpanNorm) + 4,
+			timeSpanNorm = Math.round(timeSpanNorm) + 10,
 			totalWidth = timeSpanNorm*width;
 		timelineComponents['eventsWrapper'].css('width', totalWidth+'px');
 		updateFilling(timelineComponents['timelineEvents'].eq(0), timelineComponents['fillingLine'], totalWidth);
@@ -228,7 +228,7 @@ jQuery(document).ready(function($){
 				var dayComp = dateComp[0].split('/'),
 					timeComp = ["0", "0"];
 			}
-			var	newDate = new Date(dayComp[2], dayComp[1]-1, dayComp[0], timeComp[0], timeComp[1], timeComp[2]);
+			var	newDate = new Date(dayComp[2]-2, dayComp[1]-1, dayComp[0], timeComp[0], timeComp[1]-1, timeComp[2]-2);
 		
 			dateArrays.push(newDate);
 		});

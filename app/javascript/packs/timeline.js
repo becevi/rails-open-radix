@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 	var timelines = $('.cd-horizontal-timeline'),
-		eventsMinDistance = 60;
+		eventsMinDistance = 35;
 
 	(timelines.length > 0) && initTimeline(timelines);
 
@@ -229,12 +229,11 @@ jQuery(document).ready(function($){
 					timeComp = ["0", "0"];
 			}
 			var	newDate = new Date(dayComp[2], dayComp[1]-1, dayComp[0], timeComp[0], timeComp[1], timeComp[2]);
-			console.log(dayComp);
-			console.log(timeComp);
-			console.log(newDate);
+		
 			dateArrays.push(newDate);
 		});
-	    return dateArrays;
+		console.log(dateArrays);
+			return dateArrays;
 	}
 
 	function daydiff(first, second) {

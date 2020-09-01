@@ -1,6 +1,8 @@
 
 <h2>Results....</h2>
 
+<%# This is chartkick stuff: %>
+<%= line_chart Article.group_by_day(:created_at).count %>
 
 <section class="cd-horizontal-timeline">
 	<div class="timeline">

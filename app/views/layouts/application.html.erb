@@ -10,7 +10,11 @@
     <script src="https://kit.fontawesome.com/0f9c81f1be.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
+    <%# This is required for charkick to work %>
+    <%= javascript_include_tag 'Chart.bundle', 'chartkick', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>

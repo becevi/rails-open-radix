@@ -2,6 +2,7 @@
 
 
   <%= link_to "open_radix", root_path, class: "navbar-brand ml-2" %>
+
   <%= form_tag articles_path, class: "form-inline", style: is_home?(root_path), method: :get do %>
 
           <%= text_field_tag :query,
@@ -14,6 +15,9 @@
              <i class="fas fa-search"></i>
           <% end %>
    <% end %>
+
+
+
 
 
 

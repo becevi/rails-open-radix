@@ -1,4 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
+
   <%= link_to "open_radix", root_path, class: "navbar-brand ml-2" %>
   <%= form_tag articles_path, class: "form-inline", style: is_home?(root_path), method: :get do %>
 
@@ -8,12 +10,13 @@
           autocomplete: "off",
           placeholder: ""
           %>
+          <%= button_tag(type: "Submit", class: "btn", id: "nav-search-button") do  %>
+             <i class="fas fa-search"></i>
+          <% end %>
+   <% end %>
 
 
-      <%= button_tag(type: "Submit", class: "btn") do  %>
-      <i class="fas fa-search"></i>
-      <% end %>
-      <% end %>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

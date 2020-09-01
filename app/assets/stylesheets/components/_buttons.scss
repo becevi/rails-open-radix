@@ -1,6 +1,6 @@
 .btn:focus {
   border-color: $green;
-  box-shadow: none; 
+  box-shadow: none;
   -webkit-box-shadow: none;
 }
 
@@ -10,7 +10,7 @@
   border-radius: 20px;
   &:focus {
     border-color: $green;
-    box-shadow: none; 
+    box-shadow: none;
   -webkit-box-shadow: none;
   }
 }
@@ -19,6 +19,7 @@
   background-color: transparent;
   color: $green;
   border: 1px solid white;
+  border-radius: 20px;
   padding: 4px;
   padding-right: 6px;
   padding-left: 6px;
@@ -29,7 +30,7 @@
   }
   &:focus {
     border-color: $green;
-    box-shadow: none; 
+    box-shadow: none;
   -webkit-box-shadow: none;
   }
 }
@@ -39,10 +40,12 @@
   background-color: $green;
   color: white;
   border-color: $radix-black;
+  border-radius: 20px;
   &:hover {
    background-color: $green;
    filter: grayscale(0.3);
    border-color: $radix-black;
+   border-radius: 20px;
    color: $radix-black;
   }
 }
@@ -58,6 +61,25 @@
   padding-left: 0px;
   &:hover {
     transform: scale(1.1);
+    transition: all 500ms ease;
+    color: gray;
   }
 }
+
+#search-button {
+  position: absolute;
+  left: 350px;
+}
+
+
+#nav-search-button {
+  position: absolute;
+  left: 775px;
+  top: 6px;
+}
+
+
+
+
+
 

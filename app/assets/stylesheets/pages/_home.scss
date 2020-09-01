@@ -15,12 +15,13 @@
 }
 
 .search-instructions-card {
-  width: 450px;
+  width: 400px;
   background-color: rgba(56, 56, 56, .4);
   padding: 10px 5px;
   border-radius: 20px;
   opacity: 0.0;
   transition: opacity 0.5s;
+  text-align: center;
 }
 
 .search-instructions-card ul {

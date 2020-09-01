@@ -2,20 +2,19 @@
   <div class="heading-container">
 
     <h1><span id="typed"></span></h1>
-    <%= form_tag articles_path, class: "form-inline", method: :get do %>
 
+    <%= form_tag articles_path, class: "form-inline", method: :get do %>
           <%= text_field_tag :query,
           params[:query],
-          class: "form-control search-input mr-1 radius-1px",
+          class: "form-control search-input mr-1 radius-1px fa",
           autocomplete: "off",
-          placeholder: "Get the original source of your news..."
+          placeholder: "Get the original source of your news"
           %>
-
-
-      <%= button_tag(type: "Submit", class: "btn") do  %>
-      <i class="fas fa-search"></i>
+          <%= button_tag(type: "Submit", class: "btn", id: "search-button" ) do  %>
+             <i class="fas fa-search"></i>
+          <% end %>
       <% end %>
-      <% end %>
+
       <div class="search-instructions-card mt-3">
       <ul>
         <li><strong>Search tips:</strong></li>

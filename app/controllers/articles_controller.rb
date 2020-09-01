@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
     @timelines = Timeline.all
     @timeline = Timeline.new
     @index_timeline = []
-    @all_articles = ApiArticleFetcher.execute(params[:query]).last(20).reverse.each do |article|
+    @all_articles = ApiArticleFetcher.execute(params[:query]).last(15).reverse.each do |article|
       new_article = Article.find_by(published_at: article.publishedAt)
       new_article = Article.create!(
         title: article.title,

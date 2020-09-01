@@ -217,7 +217,7 @@ jQuery(document).ready(function($){
 		events.each(function(){
 			var singleDate = $(this),
 				dateComp = singleDate.data('date').split('T');
-				console.log(dateComp)
+				
 			if( dateComp.length > 1 ) { //both DD/MM/YEAR and time are provided
 				var dayComp = dateComp[0].split('/'),
 					timeComp = dateComp[1].split(':');
@@ -228,7 +228,10 @@ jQuery(document).ready(function($){
 				var dayComp = dateComp[0].split('/'),
 					timeComp = ["0", "0"];
 			}
-			var	newDate = new Date(dayComp[2], dayComp[1]-1, dayComp[0], timeComp[0], timeComp[1]);
+			var	newDate = new Date(dayComp[2], dayComp[1]-1, dayComp[0], timeComp[0], timeComp[1], timeComp[2]);
+			console.log(dayComp);
+			console.log(timeComp);
+			console.log(newDate);
 			dateArrays.push(newDate);
 		});
 	    return dateArrays;

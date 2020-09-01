@@ -15,9 +15,10 @@
 }
 
 .search-instructions-card {
-  width: 500px;
-  background-color: rgba(56, 56, 56, .7);
-  padding: 10px;
+  width: 450px;
+  background-color: rgba(56, 56, 56, .4);
+  padding: 10px 5px;
+  border-radius: 20px;
   opacity: 0.0;
   transition: opacity 0.5s;
 }
@@ -25,6 +26,7 @@
 .search-instructions-card ul {
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 .example-search {

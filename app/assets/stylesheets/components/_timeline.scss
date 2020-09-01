@@ -1,19 +1,8 @@
-
-
 /* -------------------------------- 
 
 Primary style
 
 -------------------------------- */
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
-*, *::after, *::before {
-  box-sizing: border-box;
-}
-
-section {
-  font-size: 62.5%;
-}
-
 
 a {
   color: #7b9d6f;
@@ -242,7 +231,6 @@ Main Components
   -webkit-transition: height 0.4s;
   -moz-transition: height 0.4s;
   transition: height 0.4s;
-  z-index: 2000;
 }
 .cd-horizontal-timeline .events-content li {
   position: absolute;
@@ -274,7 +262,6 @@ Main Components
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
-  height: 500px;
 }
 .cd-horizontal-timeline .events-content li.enter-right, .cd-horizontal-timeline .events-content li.leave-right {
   -webkit-animation-name: cd-enter-right;
@@ -311,7 +298,7 @@ Main Components
   content: '- ';
 }
 .cd-horizontal-timeline .events-content p {
-  font-size: 20px;
+  font-size: 1.4rem;
   color: #959595;
 }
 .cd-horizontal-timeline .events-content em, .cd-horizontal-timeline .events-content p {
@@ -325,7 +312,7 @@ Main Components
     font-size: 2rem;
   }
   .cd-horizontal-timeline .events-content p {
-    font-size: 16px;
+    font-size: 1.8rem;
   }
 }
 

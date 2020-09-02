@@ -2,6 +2,11 @@
   border-color: $green;
   box-shadow: none;
   -webkit-box-shadow: none;
+  font-family: $body-font !important;
+}
+
+.form-control {
+  font-family: $body-font !important;
 }
 
 

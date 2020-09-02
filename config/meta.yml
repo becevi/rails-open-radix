@@ -1,4 +1,4 @@
 meta_product_name: "open_radix"
 meta_title: "open_radix - finding the source of the news"
 meta_description: "Open_radix is a tool that, via queries, allows a user to trace a news item to its approximate source or sources, enabling them to analyze its source, development, agenda and reliability, thus taking a critical approach into news consumption."
-meta_image: "open-radix.png" # should exist in `app/assets/images/`
+meta_image: "facebook-shared-image.jpeg" # should exist in `app/assets/images/`

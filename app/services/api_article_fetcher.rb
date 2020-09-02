@@ -30,13 +30,13 @@ class ApiArticleFetcher
         qInTitle: "trump",
         language: 'en',
         sortBy: 'publishedAt',
-        pageSize: 99)
+        pageSize: 100)
     else
       @newsapi.get_everything(
         qInTitle: @query,
         language: 'en',
         sortBy: 'publishedAt',
-        pageSize: 99)
+        pageSize: 100)
     end
   end
 end

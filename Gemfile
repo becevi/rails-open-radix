@@ -35,7 +35,6 @@ gem 'devise'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
-gem 'rails-social-share-button'
 gem 'simple_form'
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

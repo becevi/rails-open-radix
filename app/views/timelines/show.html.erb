@@ -1,45 +1,46 @@
 
 <div class="d-flex flex-row">
   <div class="topic-timeline">
-<% if @timeline %>
-  <h4><%= @timeline.topic=%></h4>
-  <h2><%= @timeline.description=%></h2>
-<% end %>
-</div>
-<div class="edit-delete-btn ml-3 mb-5">
-        <%= link_to edit_timeline_path do %>
-        <i class="far fa-edit"></i>
-        <% end %>
-        <%= link_to timeline_path(@timeline),
-         method: :delete,
-         data: { confirm: 'Are you sure you want to delete your timeline?'} do %>
-         <i class="far fa-trash-alt"></i>
-        <% end %>
+  <% if @timeline %>
+    <h3><%= @timeline.topic=%></h3>
+  <% end %>
+  </div>
+  <div class="edit-delete-btn ml-3 mb-5">
+    <%= link_to edit_timeline_path do %>
+    <i class="far fa-edit"></i>
+    <% end %>
+    <%= link_to timeline_path(@timeline),
+      method: :delete,
+      data: { confirm: 'Are you sure you want to delete your timeline?'} do %>
+      <i class="far fa-trash-alt"></i>
+    <% end %>
   </div>
 </div>
 
 
-<% if @timeline %>
-  <%  @timeline.saved_articles.each do |saved_article| %>
-  <div class="d-flex flex-row">
+<div class="show-list">
+  <% if @timeline %>
+  <%  @timeline.saved_articles.reverse.each do |saved_article| %>
+  <div class="d-flex flex-row justify-content-between">
      <div class="article-name mb-3">
       <%= link_to  saved_article.article.article_url, class: "article-link" do %>
       <%= saved_article.article.title %>
      </div>
-     <div class="see-more ml-3">
-      <% end %>
-    </div>
-  </div>
-    <div class="delete-article-btn">
+     <div class="article-date">
+     <%= saved_article.article.published_at %>
+     </div>
+     <div class="delete-article-btn">
      <%= link_to saved_article_path(saved_article.id),
       method: :delete,
       data: { confirm: 'Remove article from timeline?'} do %>
       <i class="far fa-trash-alt"></i>
       <% end %>
    </div>
-    <hr>
+     <% end %>
+  </div>
+  <hr class="show-rule">
   <% end %>
-
-
 <% end %>
+</div>
+
 

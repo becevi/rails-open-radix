@@ -21,12 +21,13 @@ body {
   padding: 0;
   background-color: #181818;
   color: white;
-  background-image: image-url("opaque-brain.png");
-  background-position: -40% 15%;
-  background-size: 1050px 1100px;
+  background-image: radial-gradient(circle, rgba(77,120,53,0.08307072829131656) 0%, rgba(24,24,24,0.2679446778711485) 51%),
+  image-url("opaque-brain.png");
+  background-position: -33% 15%;
+  background-size: 900px 900px;
   background-repeat: no-repeat;
   height: 43vh;
-  overflow: auto;
+  overflow: hidden;
   box-sizing: border-box;
 }
 

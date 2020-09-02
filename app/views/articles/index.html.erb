@@ -8,7 +8,7 @@
         <% @index_timeline.each_with_index do |article, index| %>
           <%date = article.published_at%>
 
-          <% date_format = date.strftime('%d/%m/%Y T %H:%M:%S')%> 
+          <% date_format = date.strftime('%d/%m/%Y T %H:%M:%S')%>
 
 					<li><a href="#0" data-date="<%=date_format%>" class="<%='selected' if index == 0%>"><div><%=date_format.gsub("T", "")%></div></a></li>
 				</ol>
@@ -30,11 +30,24 @@
     <% @index_timeline.each_with_index do |article, index| %>
         <%date = article.published_at%>
 
-        <% date_format = date.strftime('%d/%m/%Y T %H:%M:%S')%>  
+        <% date_format = date.strftime('%d/%m/%Y T %H:%M:%S')%>
 
         <li class="<%='selected' if index == 0%>" data-date="<%=date_format%>"><!-- here -->
           <div class="index-card">
-          <p><%= article.published_at %> | <%= article.source %></p><!-- here -->
+             <div class="d-flex d-inline justify-content-between">
+                <p><%= article.published_at %> | <%= article.source %></p><!-- here -->
+                <div class="share-buttons d-flex d-inline flex-row pr-2">
+                  <div class="twitter-share">
+                     <a class="twitter-share-button"
+                      href="https://twitter.com/intent/tweet?text=<%= URI.encode(article_url(article)) %>">
+                       <i class="fab fa-twitter-square"></i>
+                     </a>
+                  </div>
+                  <div class="facebook-share ml-1">
+                   <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= URI.encode(article_url(article)) %>" class="fb-xfbml-parse-ignore"><i class="fab fa-facebook-square"></i></a>
+                 </div>
+               </div>
+            </div>
           <h4><%= article.title.truncate(65) %></h4>
           <p><%= article.description&.truncate(100) %></p><!-- here -->
         <div class="index-card-links">

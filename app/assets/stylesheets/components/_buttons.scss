@@ -21,9 +21,9 @@
   border-radius: 20px;
   border: 1px solid white;
   border-radius: 20px;
-  padding: 4px;
-  padding-right: 6px;
-  padding-left: 6px;
+  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
   &:hover {
     color: white;
     border: 1px solid $green;
@@ -68,6 +68,21 @@
 }
 
 
+
+ .fa-twitter-square {
+  color: gray;
+  &:hover {
+    color:white;
+
+  }
+ }
+
+.fa-facebook-square {
+  color: gray;
+  &:hover {
+    color:white;
+  }
+}
 
 
 

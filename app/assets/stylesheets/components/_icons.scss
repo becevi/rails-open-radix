@@ -20,6 +20,7 @@
 
 .fa-edit {
   color: $green;
+  text-decoration: none;
   &:hover {
   color: white;
   text-decoration: none;
@@ -27,6 +28,9 @@
   }
 }
 
-.edit-delete-btn  {
+.edit-delete-btn a  {
   text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }

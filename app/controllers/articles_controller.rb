@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   def index
     @user = current_user
     @saved_article = SavedArticle.new
-    @timelines = Timeline.all
+    @timelines = Timeline.where(user: current_user)
     @timeline = Timeline.new
     @index_timeline = []
     @all_articles = ApiArticleFetcher.execute(params[:query]).last(12).reverse.each do |article|

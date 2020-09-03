@@ -217,15 +217,60 @@ Main Components
 }
 .cd-timeline-navigation a.prev {
   left: 0;
+  animation: pulse 1.5s infinite;
+  animation-delay: 1.5s;
   -webkit-transform: translateY(-50%) rotate(180deg);
   -moz-transform: translateY(-50%) rotate(180deg);
   -ms-transform: translateY(-50%) rotate(180deg);
   -o-transform: translateY(-50%) rotate(180deg);
   transform: translateY(-50%) rotate(180deg);
 }
+
 .cd-timeline-navigation a.next {
-  right: 0;
+  right: 0; 
+  animation: pulse 1.5s infinite;
+  animation-delay: 1.5s;
 }
+
+@keyframes pulse {
+  0% {
+      
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  
+  70% {
+      
+      box-shadow: 0 0 0 7px rgba(255, 255, 255, 0);
+  }
+  
+  100% {
+      
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.older {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  color: $green;
+  padding: 3px 5px;
+  background-color: rgba(56, 56, 56, 0.5);
+  border-radius: 20px;
+  display: none;
+}
+
+.newer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: $green;
+  padding: 1px 3px;
+  background-color: rgba(56, 56, 56, 0.5);
+  border-radius: 20px;
+  display: none;
+}
+
 .no-touch .cd-timeline-navigation a:hover {
   border-color: #7b9d6f;
 }

@@ -19,15 +19,17 @@
 
 .dropdown {
     .dropdown-menu {
-        transition: all 0.7s;
+        transition: all 0.3s;
         overflow: hidden;
         transform-origin: top center;
-        transform: scale(0.7,0);
+        transform: scale(1, 0);
         display: block;
+        opacity: 0;
     }
     &:hover {
         .dropdown-menu {
             transform: scale(1);
+            opacity: 1;
         }
     }
 }

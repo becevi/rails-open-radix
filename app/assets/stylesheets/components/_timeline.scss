@@ -9,6 +9,15 @@ a {
   text-decoration: none;
 }
 
+.results-heading {
+  position: absolute;
+  left: -66px;
+  top: -79px;
+  font-size: 35px;
+  color: white;
+  opacity: 0.6;
+}
+
 /* -------------------------------- 
 
 Main Components 
@@ -20,6 +29,7 @@ Main Components
   -webkit-transition: opacity 0.2s;
   -moz-transition: opacity 0.2s;
   transition: opacity 0.2s;
+  position: relative;
 }
 .cd-horizontal-timeline::before {
   /* never visible - this is used in jQuery to check the current MQ */
@@ -197,6 +207,9 @@ Main Components
   -webkit-transition: border-color 0.3s;
   -moz-transition: border-color 0.3s;
   transition: border-color 0.3s;
+  &:hover {
+    border: 2px solid $green;
+  }
 }
 .cd-timeline-navigation a::after {
   /* arrow icon */
@@ -251,24 +264,18 @@ Main Components
 
 .older {
   position: absolute;
-  right: 5px;
-  top: 0;
-  color: $green;
-  padding: 3px 5px;
-  background-color: rgba(56, 56, 56, 0.5);
+  right: -10%;
+  bottom: 21%;
+  color: white;
   border-radius: 20px;
-  display: none;
 }
 
 .newer {
   position: absolute;
-  left: 0;
-  top: 0;
-  color: $green;
-  padding: 1px 3px;
-  background-color: rgba(56, 56, 56, 0.5);
+  left: -10%;
+  bottom: 21%;
+  color: white;
   border-radius: 20px;
-  display: none;
 }
 
 .no-touch .cd-timeline-navigation a:hover {

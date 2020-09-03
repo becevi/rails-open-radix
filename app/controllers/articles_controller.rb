@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  skip_before_action :authenticate_user!
   def index
     @user = current_user
     @saved_article = SavedArticle.new

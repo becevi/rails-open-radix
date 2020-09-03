@@ -49,11 +49,11 @@
                 <div class="share-buttons d-flex d-inline flex-row pr-2">
                   <div class="twitter-share m-1">
                      <a class="twitter-share-button"
-                      href="https://twitter.com/intent/tweet?text=<%= URI.encode(article_url(article)) %>">
+                      href="https://twitter.com/intent/tweet?text=<%= URI.encode(article.article_url) %>">
                        <i class="fab fa-twitter-square"></i>
                      </a>
                   </div>
-                   <div class="facebook-share m-1" data-href="<%= URI.encode(article_url(article)) %>" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= URI.encode(article_url(article)) %>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"><i class="fab fa-facebook-square"></i></a></div>
+                   <div class="facebook-share m-1"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%=article.article_url %>" class="fb-xfbml-parse-ignore"><i class="fab fa-facebook-square"></i></a></div>
                </div>
             </div>
           <h4><%= article.title %></h4>

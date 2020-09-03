@@ -32,12 +32,14 @@
       <div class="share-buttons d-flex flex-row">
         <div class="twitter-share m-1">
            <a class="twitter-share-button"
-             href="https://twitter.com/intent/tweet?text=<%= URI.encode(saved_article_url(saved_article)) %>">
+             href="https://twitter.com/intent/tweet?text=<%= URI.encode(saved_article.article.article_url) %>">
              <i class="fab fa-twitter-square"></i>
            </a>
         </div>
 
-       <div class="facebook-share m-1" data-href="<%= URI.encode(saved_article_url(saved_article)) %>" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= URI.encode(saved_article_url(saved_article)) %>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"><i class="fab fa-facebook-square"></i></a></div>
+      <div class="facebook-share m-1"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%=saved_article.article.article_url%>" class="fb-xfbml-parse-ignore"><i class="fab fa-facebook-square"></i></a></div>
+
+
 
      </div>
      <div class="delete-article-btn m-1">

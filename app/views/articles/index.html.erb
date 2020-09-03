@@ -53,8 +53,8 @@
                    <div class="facebook-share m-1" data-href="<%= URI.encode(article_url(article)) %>" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= URI.encode(article_url(article)) %>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"><i class="fab fa-facebook-square"></i></a></div>
                </div>
             </div>
-          <h4><%= article.title.truncate(65) %></h4>
-          <p><%= article.description&.truncate(100) %></p><!-- here -->
+          <h4><%= article.title %></h4>
+          <p><%= article.description&.truncate(150) %></p><!-- here -->
         <div class="index-card-links">
         <%= link_to "See full article", article.article_url, target: :_blank, class: "btn btn-ireland" %>
         <button type="button" class="btn btn-ireland-outline" data-toggle="modal" data-target='#modal-article<%= article.id %>'>

@@ -30,6 +30,7 @@ Main Components
   -moz-transition: opacity 0.2s;
   transition: opacity 0.2s;
   position: relative;
+  overflow: auto;
 }
 .cd-horizontal-timeline::before {
   /* never visible - this is used in jQuery to check the current MQ */

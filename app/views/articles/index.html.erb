@@ -68,20 +68,20 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Save Article to Timeline</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Save Article to Topic</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-        <h6>Save this article in a new topic</h6>
+        <h6>Save this article to a new topic</h6>
           <%= simple_form_for @timeline do |f| %>
             <%= f.input :topic, placeholder: 'Enter topic name', label: false %>
             <input name="saved_article_id" type="hidden" value="<%= article.id %>" />
-            <%= f.button :submit, class: "btn btn-ireland mb-1" %>
+            <%= f.button :submit, "Create Topic", class: "btn btn-ireland mb-1" %>
           <% end %>
           <hr style="border-color: white">
-        <h6>Add to an existing topic</h6>
+        <h6>Save to an existing topic</h6>
         <%= simple_form_for @saved_article do |f| %>
             <%= f.input :timeline, collection: @timelines.pluck(:topic), label: false %>
             <%= f.hidden_field :article_id, value: article.id %>

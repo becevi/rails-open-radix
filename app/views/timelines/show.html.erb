@@ -36,9 +36,9 @@
              <i class="fab fa-twitter-square"></i>
            </a>
         </div>
-        <div class="facebook-share m-1">
-           <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= URI.encode(saved_article_url(saved_article)) %>" class="fb-xfbml-parse-ignore"><i class="fab fa-facebook-square"></i></a>
-        </div>
+
+       <div class="facebook-share m-1" data-href="<%= URI.encode(saved_article_url(saved_article)) %>" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= URI.encode(saved_article_url(saved_article)) %>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"><i class="fab fa-facebook-square"></i></a></div>
+
      </div>
      <div class="delete-article-btn m-1">
       <%= link_to saved_article_path(saved_article.id),

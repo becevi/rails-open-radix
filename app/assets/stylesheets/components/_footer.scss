@@ -17,35 +17,25 @@
   margin: 0;
 }
 
-.fa-instagram {
-  color: $green;
-  padding: 2px;
-}
 
 .fa-github {
   color: $green;
   padding: 2px;
 }
 
-.fa-twitter {
-  color: $green;
-  padding: 2px;
-}
-
-.fa-instagram:hover {
-  transform: scale(1.2);
-  cursor: pointer;
-  color: white;
-}
-
-.fa-twitter:hover {
-  transform: scale(1.2);
-  cursor: pointer;
-  color: white;
-}
 
 .fa-github:hover {
   transform: scale(1.2);
   cursor: pointer;
   color: white;
+}
+
+.about-footer {
+  font-size: 12px;
+  color: gray;
+  padding-top: 3px;
+  &:hover {
+    text-decoration: none;
+    color: $green;
+  }
 }

@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  height: 60px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,4 +14,20 @@
 
 .active {
   color: $green !important;
+}
+
+
+.dropdown {
+    .dropdown-menu {
+        transition: all 0.7s;
+        overflow: hidden;
+        transform-origin: top center;
+        transform: scale(0.7,0);
+        display: block;
+    }
+    &:hover {
+        .dropdown-menu {
+            transform: scale(1);
+        }
+    }
 }

@@ -13,6 +13,9 @@
     box-shadow: none;
   -webkit-box-shadow: none;
   }
+  &:hover {
+  transition: all 500ms ease;
+}
 }
 
 .btn-ireland-outline {
@@ -48,6 +51,7 @@
    border-color: $radix-black;
    border-radius: 20px;
    color: $radix-black;
+   transition: all 500ms ease;
   }
 }
 
@@ -73,6 +77,8 @@
   color: gray;
   &:hover {
     color:white;
+    transition: all 500ms ease;
+
 
   }
  }
@@ -81,6 +87,7 @@
   color: gray;
   &:hover {
     color:white;
+    transition: all 500ms ease;
   }
 }
 

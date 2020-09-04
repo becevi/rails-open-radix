@@ -7,7 +7,14 @@
 
 .form-control {
   font-family: $body-font !important;
+  
 }
 
-
+.secondary-search {
+  opacity: 0.1;
+  transition: 0.5s all;
+  &:focus {
+    opacity: 1.0;
+  }
+}
 

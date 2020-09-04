@@ -7,14 +7,17 @@
 
 .form-control {
   font-family: $body-font !important;
-  
+  border: 1px solid #383838 !important;
 }
 
 .secondary-search {
-  opacity: 0.1;
+  background-color: $hover-gray;
   transition: 0.5s all;
+  color: white;
   &:focus {
     opacity: 1.0;
+    background-color: white;
+    color: #495057;
   }
 }
 
